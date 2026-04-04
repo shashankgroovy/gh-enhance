@@ -24,3 +24,15 @@ gh api \
       -H "X-GitHub-Api-Version: 2022-11-28" \
       /repos/neovim/neovim/actions/jobs/43545960562V/
 ```
+
+Get a workflow run by ID (for run mode):
+
+```sh
+gh api repos/dlvhdr/gh-enhance/actions/runs/23697822330 > run-23697822330.json
+```
+
+Get a workflow run's jobs (for run mode):
+
+```sh
+gh api repos/dlvhdr/gh-enhance/actions/runs/23697822330/jobs > run-23697822330-jobs.json
+```
