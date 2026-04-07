@@ -1,4 +1,6 @@
 project_name: gh-enhance
+
+# Build settings
 builds:
   - binary: gh-enhance
     main: ./main.go
@@ -11,14 +13,23 @@ builds:
       - arm64
     env:
       - CGO_ENABLED=0
+
+# Archive format for releases
 archives:
   - format: tar.gz
     name_template: "{{ .Binary }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+
+# GitHub release configuration
 release:
   github:
     owner: shashankgroovy
     name: gh-enhance
     draft: false
     prerelease: false
+
+# Generate changelog from Git commits
 changelog:
   use: git
+
+# Optional: automatically set release version from Git tag
+# GoReleaser will detect the new tag from the workflow
