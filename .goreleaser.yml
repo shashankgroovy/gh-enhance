@@ -1,0 +1,18 @@
+project_name: gh-enhance
+
+builds:
+  - binary: gh-enhance
+    goos:
+      - linux
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+
+archives:
+  - format: tar.gz
+
+release:
+  github:
+    owner: my_username
+    name: gh-enhance
