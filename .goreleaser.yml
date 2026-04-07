@@ -1,18 +1,24 @@
 project_name: gh-enhance
-
 builds:
   - binary: gh-enhance
+    main: ./main.go
     goos:
       - linux
       - darwin
+      - windows
     goarch:
       - amd64
       - arm64
-
+    env:
+      - CGO_ENABLED=0
 archives:
   - format: tar.gz
-
+    name_template: "{{ .Binary }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
 release:
   github:
     owner: shashankgroovy
     name: gh-enhance
+    draft: false
+    prerelease: false
+changelog:
+  use: git
