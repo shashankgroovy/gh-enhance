@@ -17,8 +17,14 @@ builds:
 
 # Archive format for releases
 archives:
-  - format: tar.gz
-    name_template: "{{ .Binary }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+  - formats:
+      - binary
+    name_template: "gh-enhance_{{ .Tag }}_{{ .Os }}-{{ .Arch }}{{if .Arm}}_{{.Arm}}{{end}}"
+checksum:
+  name_template: "checksums.txt"
+snapshot:
+  version_template: "{{ incpatch .Version }}-next"
+
 
 # Release settings
 release:
