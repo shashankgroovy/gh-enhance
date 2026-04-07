@@ -14,5 +14,5 @@ archives:
 
 release:
   github:
-    owner: my_username
+    owner: shashankgroovy
     name: gh-enhance
