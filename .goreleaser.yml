@@ -1,6 +1,7 @@
 version: 2
 project_name: gh-enhance
 
+# Build settings
 builds:
   - binary: gh-enhance
     main: ./main.go
@@ -14,16 +15,20 @@ builds:
     env:
       - CGO_ENABLED=0
 
+# Archive format for releases
 archives:
   - format: tar.gz
     name_template: "{{ .Binary }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
 
+# Release settings
 release:
   github:
     owner: shashankgroovy
     name: gh-enhance
-    draft: false
-    prerelease: false
+  # Draft and prerelease flags are now top-level in release
+  draft: false
+  prerelease: false
 
+# Changelog generation
 changelog:
   use: git
